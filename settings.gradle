@@ -1,0 +1,2 @@
+rootProject.name = "kt_high_order_function"
+include ':app'
