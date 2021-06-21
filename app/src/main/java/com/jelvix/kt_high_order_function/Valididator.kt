@@ -31,4 +31,10 @@ class Validator(private val s: String) {
         validationRules.add(predicate)
         errorMessages.add(errorMsg)
     }
+
+    here validators
+    /*fun selectAction(key: String): Boolean{
+        // определение возвращаемого результата
+        return false
+    }*/
 }

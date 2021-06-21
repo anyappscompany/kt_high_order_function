@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private val mainActivityViewModel: MainActivityViewModel by viewModels()
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         https://metanit.com/kotlin/tutorial/3.7.php
         mainActivityViewModel.validate(Validator("ddd ddd").apply {
             //Whenever the condition of the predicate is true, the error message should be emitted
-            addRule("Text is short") { it.length<3 }
+            addRule("Text is short") { selectAction("") }
             addRule("Text is short") { it.length<2 }
             addRule("Text no dupes") { it.split(" ").size == it.split(" ").toTypedArray().distinct().count() }
             isValid()
@@ -36,5 +37,10 @@ class MainActivity : AppCompatActivity() {
         mainActivityViewModel.error.observe(this, Observer {
             Log.d("debapp", "E: ${it}")
         })
+    }
+
+    fun selectAction(key: String): Boolean{
+        // определение возвращаемого результата
+        return false
     }
 }
